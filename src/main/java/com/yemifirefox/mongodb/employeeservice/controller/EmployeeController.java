@@ -30,7 +30,7 @@ public class EmployeeController {
     }
 
     // to update employee
-    @CachePut(value = "employee", key = "#employee.employeeId")
+    @CachePut(value = "employee", key = "#employee.employeeId")//redis cache is here
     @RequestMapping(value = "update",method = RequestMethod.POST)     // or user @GetMapping
     public Employee update(@RequestBody Employee employee){
         return employeeService.update(employee);
